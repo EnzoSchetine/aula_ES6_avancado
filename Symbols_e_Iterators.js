@@ -55,4 +55,4 @@ console.log(it.next());*/ // Não iterado
 }*/ // Iterado
 
 const arr2 = [...obj];
-console.log(arr2);
+console.log(arr2);// usando Spread com objetos iteraveis
