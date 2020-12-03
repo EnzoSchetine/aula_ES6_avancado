@@ -19,7 +19,7 @@
 // Async transforma função em promise
 // Await aguarda resolução da promise
 
-const asyncTimer = () => new Promise((resolve, reject) => {
+/*const asyncTimer = () => new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve('12345');
     }, 1000);
@@ -37,4 +37,21 @@ simpleFunc()
     })
     .catch(err => {
         console.log(err);
-    });
+    });*/
+
+// EventEmitter
+// Metodo on emite sempre, once emite apenas uma vez
+
+/*const EventEmitter = require('events');
+class Users extends EventEmitter {
+    userLogged(data) {
+        this.emit('User logged', data);
+    }
+}
+const users = new Users();
+//users.on('User logged', data => {
+users.once('User logged', data => {
+    console.log(data);
+});
+users.userLogged({user: 'Enzo Schetine'});
+users.userLogged({user: 'Celso Henrique'});*/
