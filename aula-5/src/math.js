@@ -14,5 +14,8 @@ class Math {
     multiply(a, b) {
         return a * b;
     }
+    printSum(req, res, a, b) {
+        /*console.log(*/res.load('index', a + b);
+    }
 }
 module.exports = Math; // Assincrono
