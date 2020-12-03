@@ -39,7 +39,7 @@ describe('Math class', function() {
     })
 });*/// o unico 'it' executado é com o only, skip pula o teste
 
-const assert = require('assert');
+/*const assert = require('assert');
 const Math = require('../src/math.js');
 let value = 0;
 describe('Math class', function() {
@@ -59,5 +59,39 @@ describe('Math class', function() {
     it('Multiply two numbers', function() {
         const math = new Math();
         assert.equal(math.multiply(value, 5), 0);
+    })
+});*/
+
+// Chai
+const assert = require('assert');
+const Math = require('../src/math.js');
+const expect = require('chai').expect;
+let value = 0;
+describe('Math class', function() {
+    beforeEach(function() {
+        value = 0;
+    });
+    it('Sum two numbers', function(done) {
+        const math = new Math();
+        this.timeout(3000);
+        value = 5
+        math.sum(5, 5, (value) => {
+            expect(value).to.equal(10);
+            done();
+        })
+    });
+    it.only('Multiply two numbers', function() {
+        const math = new Math();
+        const obj = {
+            name: 'Enzo Schetine'
+        }
+        const obj2 = {
+            name: 'Enzo Schetine'
+        }
+        expect(obj).to.deep.equal(obj2);
+        //expect(obj)
+        //    .to.have.property('name')
+        //    .equal('Enzo Schetine');
+        //expect(math.multiply(value, 5)).to.equal(0);
     })
 });
